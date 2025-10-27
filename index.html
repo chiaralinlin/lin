@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>To‑Do List (Local Storage + Reorder + Reminders + Sync)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>To‑Do List</h1>
+      <p class="subtitle">Persistent tasks with reorder, due dates & reminders, and optional sync</p>
+    </header>
+
+    <section class="add-section" aria-label="Add new task">
+      <input id="newTodo" type="text" placeholder="What needs to be done?" aria-label="New todo">
+      <input id="newDue" type="datetime-local" aria-label="Due date (optional)">
+      <button id="addBtn" aria-label="Add task">Add</button>
+    </section>
+
+    <section class="controls" aria-label="Controls">
+      <div class="filters" role="tablist" aria-label="Filters">
+        <button class="filter active" data-filter="all" role="tab">All</button>
+        <button class="filter" data-filter="active" role="tab">Active</button>
+        <button class="filter" data-filter="completed" role="tab">Completed</button>
+      </div>
+
+      <div class="actions">
+        <button id="clearCompleted">Clear completed</button>
+        <button id="clearAll">Clear all</button>
+        <button id="syncNow" title="Sync now">Sync now</button>
+        <span id="syncStatus" class="sync-status">Offline</span>
+      </div>
+    </section>
+
+    <section class="list-wrap" aria-live="polite">
+      <ul id="todoList" class="todo-list" aria-label="To‑do items"></ul>
+    </section>
+
+    <footer class="status">
+      <span id="count"></span>
+      <span class="hint">Drag items to reorder. Double-click a task to edit it. Press Enter to save.</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
