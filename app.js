@@ -510,7 +510,7 @@ function render() {
 
   // update count
   const remaining = todos.filter(t => !t.completed).length;
-  countEl.textContent = `${remaining} item${remaining !== 1 ? 's' : ''} left`;
+  countEl.innerHTML = `<span class="count">${remaining}</span> item${remaining !== 1 ? 's' : ''} left`;
 
   // update filter active state
   filterButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.filter === filter));
